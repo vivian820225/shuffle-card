@@ -1,0 +1,81 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  appearance: none;
+  padding: 1.25rem 1.5rem;
+  background-color: #ffd902;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all .2s;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #ff9900;
+}
+
+.button:focus {
+  box-shadow: 0 0 2pt 2pt rgba(255, 153, 0, .5);
+}
+
+.container {
+  width: 100vw;
+  height: 360px;
+  margin: 5rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 240px;
+  background-color: #f8f8f8;
+  border: 2px solid #afafaf;
+  border-radius: 8px;
+  font-size: 8rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  content: attr(data-value);
+  font-size: 2rem;
+}
+
+.card::before {
+  top: 1rem;
+  left: 1rem;
+}
+
+.card::after {
+  bottom: 1rem;
+  right: 1rem;
+  transform: rotate(180deg);
+}
+
+.black {
+  color: black;
+}
+
+.red {
+  color: red;
+}
