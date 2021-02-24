@@ -32,9 +32,13 @@ class Card {
 
   getHTML() {
     const cardDiv = document.createElement('div');
+    const cardBody = `
+      <div class="card-front ${this.color}" data-value="${this.suit}">${this.suit}</div>
+      <div class="card-back"></div>
+    `;
     cardDiv.innerText = this.suit;
-    cardDiv.classList.add('card', this.color);
-    cardDiv.dataset.value = `${this.suit}`; 
+    cardDiv.classList.add('card','transform');
+    cardDiv.innerHTML = cardBody;
     return cardDiv;
   }
 }
